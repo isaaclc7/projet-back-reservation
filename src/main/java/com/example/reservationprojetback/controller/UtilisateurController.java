@@ -1,6 +1,6 @@
 package com.example.reservationprojetback.controller;
 
-import com.example.reservationprojetback.Entity.Utilisateur;
+import com.example.reservationprojetback.entity.Utilisateur;
 import com.example.reservationprojetback.service.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

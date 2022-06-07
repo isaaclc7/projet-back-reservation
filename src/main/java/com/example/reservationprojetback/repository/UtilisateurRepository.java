@@ -1,6 +1,6 @@
 package com.example.reservationprojetback.repository;
 
-import com.example.reservationprojetback.Entity.Utilisateur;
+import com.example.reservationprojetback.entity.Utilisateur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
