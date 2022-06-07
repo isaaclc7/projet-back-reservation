@@ -41,32 +41,40 @@ public class Utilisateur {
     public Integer getId() {
         return id;
     }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public String getNom() {
         return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getPrenom() {
         return prenom;
     }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
     public void setMail(String mail) {
         this.mail = mail;
     }
+
     public String getMotDePasse() {
         return motDePasse;
     }
-    public void setMotDePasse(String mot_de_passe) {
-        this.motDePasse = mot_de_passe;
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Utilisateur)) return false;
-        Utilisateur utilisateur = (Utilisateur) o;
-        return Objects.equals(utilisateur, utilisateur.mail) &&
-                Objects.equals(motDePasse, utilisateur.motDePasse);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, mail, motDePasse);
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
     }
 }
