@@ -1,4 +1,4 @@
-package com.example.reservationprojetback.Entity;
+package com.example.reservationprojetback.entity;
 
 import javax.persistence.*;
 import java.util.Date;
