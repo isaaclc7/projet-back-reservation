@@ -1,6 +1,6 @@
 package com.example.reservationprojetback.service;
 
-import com.example.reservationprojetback.Entity.Utilisateur;
+import com.example.reservationprojetback.entity.Utilisateur;
 import com.example.reservationprojetback.repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 

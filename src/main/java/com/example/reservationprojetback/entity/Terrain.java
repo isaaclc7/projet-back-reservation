@@ -13,6 +13,9 @@ public class Terrain {
     @Column
     private String numero;
 
+    public Terrain() {
+    }
+
     public Terrain(Integer id, String numero) {
         this.id = id;
         this.numero = numero;
