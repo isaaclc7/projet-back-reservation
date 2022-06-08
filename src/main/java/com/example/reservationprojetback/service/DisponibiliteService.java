@@ -22,6 +22,6 @@ public class DisponibiliteService {
         return disponibiliteRepository.findByTerrain(numero);
     }
 
-    public List<Disponibilite> getDisponibilite() { return disponibiliteRepository.findAll(); }
+    public List<Disponibilite> getDisponibilites() { return disponibiliteRepository.findAll(); }
 
 }

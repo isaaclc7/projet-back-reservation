@@ -21,9 +21,9 @@ public class TerrainController {
     @Autowired
     TerrainService terrainService;
     @GetMapping(path = "/terrains")
-    public ResponseEntity<?> listTerrains() {
+    public ResponseEntity<List<Terrain>> listTerrains() {
         List<Terrain> terrains = terrainService.getTerrain();
-        return  ResponseEntity.ok(terrains);
+        return  new ResponseEntity<>(terrains, HttpStatus.OK);
     }
     @GetMapping(path = "/terrain")
     public ResponseEntity<Terrain> findTerrainByNumero(@RequestParam String numero) {

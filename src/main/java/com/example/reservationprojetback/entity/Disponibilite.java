@@ -19,4 +19,46 @@ public class Disponibilite {
 
     @Column(name = "date_fin")
     private Date dateFin;
+
+    public Disponibilite() {
+    }
+
+    public Disponibilite(Integer id, Terrain terrain, Date dateDebut, Date dateFin) {
+        this.id = id;
+        this.terrain = terrain;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Terrain getTerrain() {
+        return terrain;
+    }
+
+    public void setTerrain(Terrain terrain) {
+        this.terrain = terrain;
+    }
+
+    public Date getDateDebut() {
+        return dateDebut;
+    }
+
+    public void setDateDebut(Date dateDebut) {
+        this.dateDebut = dateDebut;
+    }
+
+    public Date getDateFin() {
+        return dateFin;
+    }
+
+    public void setDateFin(Date dateFin) {
+        this.dateFin = dateFin;
+    }
 }
