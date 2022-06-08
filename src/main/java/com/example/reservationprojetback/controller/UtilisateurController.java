@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 import java.util.Optional;
 
 @RestController
@@ -20,6 +22,15 @@ public class UtilisateurController {
     @GetMapping(path = "/utilisateurs")
     public ResponseEntity<Utilisateur> findUtilisateurByMail(@RequestParam String mail) {
         Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurByMail(mail);
+        if (utilisateur.isPresent()) {
+            return new ResponseEntity<>(utilisateur.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @GetMapping(path = "/utilisateurs/{id}")
+    public ResponseEntity<?> findOneUtilisateur(@PathVariable("id") @Min(1) Integer id) {
+        Optional<Utilisateur> utilisateur = utilisateurService.getOneUtilisateur(id);
         if (utilisateur.isPresent()) {
             return new ResponseEntity<>(utilisateur.get(), HttpStatus.OK);
         } else {

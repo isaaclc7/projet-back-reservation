@@ -19,6 +19,8 @@ public class UtilisateurService {
         return utilisateurRepository.findByMail(mail);
     }
 
+    public Optional<Utilisateur> getOneUtilisateur(Integer id) { return utilisateurRepository.findById(id); };
+
     public Utilisateur createUtilisateur (Utilisateur utilisateur) {
         return utilisateurRepository.save(utilisateur);
     }
