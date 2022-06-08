@@ -36,17 +36,4 @@ public class Terrain {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Terrain)) return false;
-        Terrain terrain = (Terrain) o;
-        return Objects.equals(getId(), terrain.getId()) && Objects.equals(getNumero(), terrain.getNumero());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getNumero());
-    }
 }

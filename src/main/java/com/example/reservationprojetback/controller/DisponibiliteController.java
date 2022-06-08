@@ -40,7 +40,7 @@ public class DisponibiliteController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @DeleteMapping(path = "/disponibilites")
+    @DeleteMapping(path = "/disponibilites/{id}")
     public void deleteDisponibilities(@PathVariable("id") @Min(1) Integer id) {
         disponibiliteService.deleteDisponibilitie(id);
     }

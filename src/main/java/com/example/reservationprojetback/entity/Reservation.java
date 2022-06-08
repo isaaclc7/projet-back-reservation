@@ -63,17 +63,4 @@ public class Reservation {
     public void setUtilisateur(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Reservation)) return false;
-        Reservation that = (Reservation) o;
-        return Objects.equals(getId(), that.getId()) && Objects.equals(getDateReservation(), that.getDateReservation()) && Objects.equals(getTerrain(), that.getTerrain()) && Objects.equals(getUtilisateur(), that.getUtilisateur());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getDateReservation(), getTerrain(), getUtilisateur());
-    }
 }
