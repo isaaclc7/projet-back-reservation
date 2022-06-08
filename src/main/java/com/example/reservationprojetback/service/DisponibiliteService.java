@@ -1,8 +1,6 @@
 package com.example.reservationprojetback.service;
 
 import com.example.reservationprojetback.entity.Disponibilite;
-import com.example.reservationprojetback.entity.Terrain;
-import com.example.reservationprojetback.entity.Utilisateur;
 import com.example.reservationprojetback.repository.DisponibiliteRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +21,9 @@ public class DisponibiliteService {
     }
 
     public List<Disponibilite> getDisponibilites() { return disponibiliteRepository.findAll(); }
+
+    public void deleteDisponibilitie(Integer id) {
+        disponibiliteRepository.deleteById(id);
+    }
 
 }
