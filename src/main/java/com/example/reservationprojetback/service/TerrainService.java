@@ -5,6 +5,7 @@ import com.example.reservationprojetback.entity.Utilisateur;
 import com.example.reservationprojetback.repository.TerrainRepository;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +24,13 @@ public class TerrainService {
 
     public Optional<Terrain> getTerrainByNumero (String numero) {
         return terrainRepository.findByNumero(numero);
+    }
+
+    public Terrain createTerrain (Terrain terrain) {
+        return terrainRepository.save(terrain);
+    }
+
+    public void deleteTerrain(@Min(1) Integer id) {
+        terrainRepository.deleteById(id);
     }
 }

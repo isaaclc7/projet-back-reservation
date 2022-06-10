@@ -4,7 +4,6 @@ import com.example.reservationprojetback.entity.Disponibilite;
 import com.example.reservationprojetback.entity.Terrain;
 import com.example.reservationprojetback.service.DisponibiliteService;
 import com.example.reservationprojetback.service.TerrainService;
-import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @RestController
