@@ -20,13 +20,12 @@ public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
     @GetMapping(path = "/utilisateurs")
-    public ResponseEntity<Utilisateur> findUtilisateurByMail(@RequestParam String mail) {
-        Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurByMail(mail);
+    public ResponseEntity<Utilisateur> findUtilisateurByTelephone(@RequestParam String telephone) {
+        Optional<Utilisateur> utilisateur = utilisateurService.getUtilisateurByTelephone(telephone);
         if (utilisateur.isPresent()) {
             return new ResponseEntity<>(utilisateur.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+            return new ResponseEntity<>(HttpStatus.OK);
     }
     @GetMapping(path = "/utilisateurs/{id}")
     public ResponseEntity<?> findOneUtilisateur(@PathVariable("id") @Min(1) Integer id) {
@@ -39,11 +38,11 @@ public class UtilisateurController {
     }
 
     @PostMapping(path = "/utilisateurs")
-    public ResponseEntity<Utilisateur> createUtilisateur(@RequestBody Utilisateur utilisateur) throws Exception {
-        Optional<Utilisateur> mailAlreadyExist = utilisateurService.getUtilisateurByMail(utilisateur.getMail());
+    public ResponseEntity<Utilisateur> createUtilisateur(@RequestBody Utilisateur utilisateur) {
+        Optional<Utilisateur> telephoneAlreadyExist = utilisateurService.getUtilisateurByTelephone(utilisateur.getTelephone());
 
-        if (mailAlreadyExist.isPresent()) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Le mail renseigné existe déjà");
+        if (telephoneAlreadyExist.isPresent()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Le numéro de téléphone renseigné est déjà enregistré");
         } else {
             utilisateurService.createUtilisateur(utilisateur);
         }

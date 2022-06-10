@@ -16,7 +16,7 @@ public class DisponibiliteService {
         this.disponibiliteRepository = disponibiliteRepository;
     }
 
-    public Optional<Disponibilite> getDisponibiliteByTerrain (String numero) {
+    public List<Disponibilite> getDisponibiliteByTerrain (String numero) {
         return disponibiliteRepository.findByTerrain(numero);
     }
 

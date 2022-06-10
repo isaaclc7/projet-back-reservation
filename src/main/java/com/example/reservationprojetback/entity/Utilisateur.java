@@ -19,22 +19,17 @@ public class Utilisateur {
     private String prenom;
 
     @Column
-    @NotNull(message = "{NotNull.Utilisateur.mail}")
-    private String mail;
-
-    @Column(name = "mot_de_passe")
-    @NotNull(message = "{NotNull.Utilisateur.motDePasse}")
-    private String motDePasse;
+    @NotNull(message = "{NotNull.Utilisateur.telephone}")
+    private String telephone;
 
     public Utilisateur() {
     }
 
-    public Utilisateur(Integer id, String nom, String prenom, String mail, String motDePasse) {
+    public Utilisateur(Integer id, String nom, String prenom, String telephone) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
-        this.mail = mail;
-        this.motDePasse = motDePasse;
+        this.telephone = telephone;
     }
 
     public Integer getId() {
@@ -61,19 +56,11 @@ public class Utilisateur {
         this.prenom = prenom;
     }
 
-    public String getMail() {
-        return mail;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
-    public String getMotDePasse() {
-        return motDePasse;
-    }
-
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 }

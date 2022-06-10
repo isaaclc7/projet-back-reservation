@@ -15,8 +15,8 @@ public class UtilisateurService {
         this.utilisateurRepository = utilisateurRepository;
     }
 
-    public Optional<Utilisateur> getUtilisateurByMail (String mail) {
-        return utilisateurRepository.findByMail(mail);
+    public Optional<Utilisateur> getUtilisateurByTelephone (String telephone) {
+        return utilisateurRepository.findByTelephone(telephone);
     }
 
     public Optional<Utilisateur> getOneUtilisateur(Integer id) { return utilisateurRepository.findById(id); };
