@@ -23,7 +23,7 @@ public class TerrainController {
 
     @GetMapping(path = "/terrains")
     public ResponseEntity<List<Terrain>> listTerrains() {
-        List<Terrain> terrains = terrainService.getTerrain();
+        List<Terrain> terrains = terrainService.getTerrains();
         return  new ResponseEntity<>(terrains, HttpStatus.OK);
     }
     @GetMapping(path = "/terrains/{id}")
@@ -53,8 +53,8 @@ public class TerrainController {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Le numéro de terrain renseigné est déjà enregistré");
         } else {
             terrainService.createTerrain(terrain);
+            return new ResponseEntity<>(terrain, HttpStatus.CREATED);
         }
-        return new ResponseEntity<>(terrain, HttpStatus.CREATED);
     }
 
     @DeleteMapping(path = "/terrains/{id}")

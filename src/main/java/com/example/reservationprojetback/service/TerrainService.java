@@ -18,7 +18,7 @@ public class TerrainService {
         this.terrainRepository = terrainRepository;
     }
 
-    public List<Terrain> getTerrain() { return terrainRepository.findAll(); }
+    public List<Terrain> getTerrains() { return terrainRepository.findAll(); }
 
     public Optional<Terrain> getTerrainById(Integer id) { return terrainRepository.findById(id); }
 
